@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>土井 仰輝のポートフォリオ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header, footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+        }
+        section {
+            padding: 2rem;
+            text-align: center;
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        #myCanvas {
+            display: block;
+            margin: 2rem auto;
+            width: 745px;
+            height: 540px;
+            background-color: #36393e;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+</header>
+<section>
+    <h2></h2>
+    <canvas id="myCanvas"></canvas>
+</section>
+
+<script src="https://unpkg.com/three@0.147.0/build/three.min.js"></script>
+<script src="https://unpkg.com/three@0.147.0/examples/js/controls/OrbitControls.js"></script>
+<script src="https://unpkg.com/three@0.142.0/examples/js/loaders/STLLoader.js"></script>
+<script>
+    window.addEventListener("DOMContentLoaded", init);
+
+    function init() {
+        const canvasElement = document.querySelector('#myCanvas');
+        const renderer = new THREE.WebGLRenderer({
+            canvas: canvasElement,
+            antialias: true,
+            alpha: true
+        });
+        renderer.shadowMap.enabled = true;
+        renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+
+        const width = canvasElement.clientWidth;
+        const height = canvasElement.clientHeight;
+        renderer.setSize(width, height);
+
+        const scene = new THREE.Scene();
+        scene.background = new THREE.Color(0x36393e);
+
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+        scene.add(ambientLight);
+
+        const directionalLight = new THREE.DirectionalLight(0xffffff, 0.7);
+        directionalLight.position.set(1500, 1100, 0);
+        directionalLight.castShadow = true;
+        scene.add(directionalLight);
+
+        const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 50000);
+        const controls = new THREE.OrbitControls(camera, canvasElement);
+        controls.enableDamping = true;
+        controls.dampingFactor = 0.2;
+
+        let mesh;
+        const loader = new THREE.STLLoader();
+        loader.load('./StratocasterType.stl', function (geometry) {
+            geometry.computeVertexNormals();
+            const material = new THREE.MeshStandardMaterial({
+                color: 0xf0c9a2,
+                roughness: 0.6,
+                metalness: 0.0,
+                side: THREE.DoubleSide
+            });
+
+            mesh = new THREE.Mesh(geometry, material);
+            mesh.scale.set(10.0, 10.0, 10.0);
+            mesh.castShadow = true;
+            scene.add(mesh);
+
+            const box = new THREE.Box3().setFromObject(mesh);
+            const size = box.getSize(new THREE.Vector3());
+            const center = box.getCenter(new THREE.Vector3());
+
+            camera.position.copy(center);
+            camera.position.z += size.length() * 1.5;
+            camera.near = size.length() / 100;
+            camera.far = size.length() * 100;
+            camera.updateProjectionMatrix();
+
+            controls.target.copy(center);
+            controls.update();
+        });
+
+        canvasElement.addEventListener('mousedown', toggleRotation);
+        canvasElement.addEventListener('touchstart', toggleRotation);
+
+        let isRotating = true;
+
+        function toggleRotation() {
+            isRotating = !isRotating;
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            if (mesh && isRotating) {
+                mesh.rotation.y -= 0.005;
+            }
+            controls.update();
+            renderer.render(scene, camera);
+        }
+
+        animate();
+    }
+</script>
+
+</body>
+</html>

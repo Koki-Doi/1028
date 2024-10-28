@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>MEN'S salon HYPE 布施駅前店</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- ファビコンの設定 -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!-- フォントの読み込み -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Googleフォント -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesomeの読み込み -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- スライダー用のCSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="#"><img src="logo.jpg" alt="MEN'S salon HYPE"></a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#concept">コンセプト</a></li>
+                    <li><a href="#menu">メニュー</a></li>
+                    <li><a href="#gallery">ギャラリー</a></li>
+                    <li><a href="#staff">スタッフ</a></li>
+                    <li><a href="#access">アクセス</a></li>
+                    <li><a href="#reservation">予約</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span><span></span><span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- メインビジュアル -->
+    <section id="main-visual">
+        <div class="overlay"></div>
+        <!-- メインビジュアルに front.png を使用 -->
+        <div class="parallax-bg" style="background-image: url('front.png');"></div>
+        <div class="main-text">
+            <h1 class="fade-in">MEN'S salon HYPE</h1>
+            <a href="#reservation" class="btn fade-in">予約する</a>
+        </div>
+    </section>
+
+    <!-- コンセプト -->
+    <section id="concept" class="fade-in-section">
+        <div class="container">
+            <h2>CONCEPT</h2>
+            <p>MEN'S salon HYPEは全員メンズサロン出身スタイリストで構成されています<br>スタッフ達がお客様の骨格や髪質を見極めるのはもちろん、ライフスタイルや来店周期まで含め<br>カウンセリングさせて頂き、あなたに似合うヘアスタイルを提案致します♪<br>こだわりのメンズカット、ツイスパ、韓国ヘア、美容室が苦手な方もお越し頂ける空間作りを<br>意識しているので細部までこだわって、一緒になりたいをイメージ作り上げます</p>
+        </div>
+    </section>
+
+    <!-- メニュー -->
+    <section id="menu" class="fade-in-section">
+        <div class="container">
+            <h2>MENU</h2>
+            <table>
+                <tr>
+                    <th>メニュー</th>
+                    <th>料金（税込）</th>
+                    <th>詳細</th>
+                </tr>
+                <!-- カットカラー -->
+                <tr>
+                    <td>カット+カラー+3TR</td>
+                    <td>¥8,900</td>
+                    <td>カット、選べるカラー材、ハホニコ集中トリートメント</td>
+                </tr>
+                <!-- カラートリートメント -->
+                <tr>
+                    <td>イルミナ、エドルカラー+3stepトリートメント</td>
+                    <td>¥7,900</td>
+                    <td>ハホニコ集中トリートメント</td>
+                </tr>
+                <!-- カットカラー縮毛矯正その他 -->
+                <tr>
+                    <td>カット+カラー+縮毛矯正</td>
+                    <td>¥16,600</td>
+                    <td>シャンプー・ブロー込み</td>
+                </tr>
+                <!-- カット -->
+                <tr>
+                    <td>【学割カット】新規+2ヶ月以内に再来の方</td>
+                    <td>¥3,500～</td>
+                    <td>土日祝+¥550、シャンプー・ブロー込み</td>
+                </tr>
+                <tr>
+                    <td>前髪カット</td>
+                    <td>¥1,100</td>
+                    <td>前髪カットのみは電話予約をお願いします</td>
+                </tr>
+                <tr>
+                    <td>刈り上げ（フェード変更可能）</td>
+                    <td>¥2,500～</td>
+                    <td>フェード+¥770</td>
+                </tr>
+                <!-- カラー -->
+                <tr>
+                    <td>カラー（シャンプー・ブロー込み）</td>
+                    <td>¥4,000</td>
+                    <td>土日祝+¥550、黒染め+¥2,200</td>
+                </tr>
+                <tr>
+                    <td>イルミナカラー（シャンプー・ブロー込み）</td>
+                    <td>¥5,500</td>
+                    <td>土日祝+¥550</td>
+                </tr>
+                <tr>
+                    <td>ブリーチ</td>
+                    <td>¥8,800</td>
+                    <td>土日祝+¥550、ケアブリーチ+¥3,300</td>
+                </tr>
+                <!-- パーマ -->
+                <tr>
+                    <td>パーマ（シャンプー・ブロー込み）</td>
+                    <td>¥6,000</td>
+                    <td>土日祝+¥770、カット+¥2,200</td>
+                </tr>
+                <tr>
+                    <td>ダウンパーマ</td>
+                    <td>¥3,500～</td>
+                    <td>本場韓国薬剤使用、サイドのみ/バック+¥1,500</td>
+                </tr>
+                <!-- 縮毛矯正 -->
+                <tr>
+                    <td>縮毛矯正（シャンプー・ブロー込み）</td>
+                    <td>¥8,800</td>
+                    <td>土日祝+¥550、カット+¥2,200</td>
+                </tr>
+                <!-- トリートメント -->
+                <tr>
+                    <td>4STEP選べるトリートメント</td>
+                    <td>¥1,100～</td>
+                    <td>シャンプー・ブロー+¥2,200、1ステップごと+¥1,100、最大4ステップ</td>
+                </tr>
+                <!-- その他メニュー -->
+                <tr>
+                    <td>眉カット【ハリウッドブローリフト変更+¥3,300】</td>
+                    <td>お問い合わせ</td>
+                    <td>ハリウッドブローリフト+眉ワックス処理 ¥4,400</td>
+                </tr>
+            </table>
+            <p>※その他のメニューや詳細はお問い合わせください。</p>
+        </div>
+    </section>
+
+    <!-- ギャラリー -->
+    <section id="gallery" class="fade-in-section">
+        <div class="container">
+            <h2>GALLERY</h2>
+            <div class="gallery-slider">
+                <!-- スライダーに画像を挿入 -->
+                <div><img src="Interior_2.jpg" alt="ギャラリー1"></div>
+                <div><img src="Interior_3.jpg" alt="ギャラリー2"></div>
+                <div><img src="Interior_4.jpg" alt="ギャラリー3"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- スタッフ -->
+    <section id="staff" class="fade-in-section">
+        <div class="container">
+            <h2>STAFF</h2>
+            <div class="staff-list">
+                <!-- 山本 浩平 -->
+                <div class="staff-member">
+                    <img src="stylist_1.jpg" alt="山本 浩平">
+                    <h3>山本 浩平</h3>
+                    <p>マネージャー / スタイリスト</p>
+                    <!-- スタッフの説明文 -->
+                    <p class="staff-description">カットとカラーリングを得意とし、最新のトレンドを取り入れたスタイルを提案します。</p>
+                    <!-- Instagramリンクボタン -->
+                    <a href="https://www.instagram.com/kohei_yamamoto" target="_blank" rel="noopener noreferrer" class="insta-button">
+                        <i class="fab fa-instagram"></i> フォローする
+                    </a>
+                </div>
+                <!-- 高林 稜 -->
+                <div class="staff-member">
+                    <img src="stylist_2.jpg" alt="高林 稜">
+                    <h3>高林 稜</h3>
+                    <p>スタイリスト</p>
+                    <!-- スタッフの説明文 -->
+                    <p class="staff-description">パーマスタイルや韓国風ヘアが得意で、お客様一人ひとりに合ったスタイルを提案します。</p>
+                    <!-- Instagramリンクボタン -->
+                    <a href="https://www.instagram.com/ryo_takabayashi" target="_blank" rel="noopener noreferrer" class="insta-button">
+                        <i class="fab fa-instagram"></i> フォローする
+                    </a>
+                </div>
+                <!-- 中戸 滉 -->
+                <div class="staff-member">
+                    <img src="stylist_3.jpg" alt="中戸 滉">
+                    <h3>中戸 滉</h3>
+                    <p>スタイリスト</p>
+                    <!-- スタッフの説明文 -->
+                    <p class="staff-description">ナチュラルから個性的なスタイルまで幅広く対応。リラックスできる接客が好評です。</p>
+                    <!-- Instagramリンクボタン -->
+                    <a href="https://www.instagram.com/hiroshi_nakato" target="_blank" rel="noopener noreferrer" class="insta-button">
+                        <i class="fab fa-instagram"></i> フォローする
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- アクセス -->
+    <section id="access" class="fade-in-section">
+        <div class="container">
+            <h2>ACCESS</h2>
+            <div class="access-content">
+                <p><i class="fas fa-map-marker-alt"></i> 〒577-0841 大阪府東大阪市足代新町15-5 グランガーデン足代新町1F</p>
+                <p><i class="fas fa-train"></i> 近鉄布施駅より徒歩4分</p>
+                <p><i class="fas fa-clock"></i> 営業時間：平日 10:00～22:00 / 土日祝 9:00～21:00</p>
+                <p><i class="fas fa-calendar-alt"></i> 定休日：年中無休</p>
+                <div class="map">
+                    <!-- Googleマップの埋め込みコード -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.601525045573!2d135.55678807650096!3d34.6647649729325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000df0025f7a711%3A0x1012b02539b13989!2sMen%27s%20salon%20HYPE!5e0!3m2!1sja!2sjp!4v1729775336476!5m2!1sja!2sjp" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 予約 -->
+    <section id="reservation" class="fade-in-section">
+        <div class="container">
+            <h2>RESERVATION</h2>
+            <p>ご予約・お問い合わせはお電話またはオンライン予約より承っております。</p>
+            <a href="tel:06-1234-5678" class="btn phone-btn"><i class="fas fa-phone-alt"></i> 06-1234-5678</a>
+            <a href="https://beauty.hotpepper.jp/CSP/bt/reserve/?storeId=H000685692&stylistId=T000965847" class="btn online-btn"><i class="fas fa-calendar-check"></i> オンライン予約</a>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">
+                <a href="#"><img src="logo.jpg" alt="MEN'S salon HYPE"></a>
+            </div>
+            <div class="social-media">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <!-- 他のSNSアイコン -->
+            </div>
+            <p>&copy; 2023 MEN'S salon HYPE 布施駅前店. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <!-- jQueryの読み込み（スライダー用） -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- スライダー用のJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <!-- メインのスクリプト -->
+    <script src="script.js"></script>
+</body>
+</html>

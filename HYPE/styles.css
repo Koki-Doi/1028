@@ -1,0 +1,432 @@
+/* フォント設定 */
+body {
+    font-family: 'Roboto', 'Noto Serif JP', sans-serif;
+    color: #333;
+    margin: 0;
+    background-color: #fff;
+    scroll-behavior: smooth; /* スムーススクロールを有効に */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Noto Serif JP', serif;
+}
+
+/* コンテナ */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* ヘッダー */
+header {
+    width: 100%;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    height: 60px;
+    width: auto;
+}
+
+nav {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin-left: auto;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 700;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #c5a880;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.hamburger span {
+    height: 3px;
+    width: 25px;
+    background-color: #333;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+.hamburger.toggle span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.toggle span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.toggle span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* メインビジュアル */
+#main-visual {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.parallax-bg {
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+}
+
+#main-visual .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+}
+
+#main-visual .main-text {
+    position: absolute;
+    color: #fff;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#main-visual h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+#main-visual p {
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+
+#main-visual .btn {
+    padding: 15px 30px;
+    background-color: #c5a880;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+#main-visual .btn:hover {
+    background-color: #b3956a;
+}
+
+/* フェードインアニメーション */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+    animation-delay: 0.5s;
+}
+
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: none;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* セクション共通 */
+section {
+    padding: 100px 0;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+section h2::after {
+    content: '';
+    width: 60px;
+    height: 3px;
+    background-color: #c5a880;
+    display: block;
+    margin: 20px auto 0;
+}
+
+/* コンセプト */
+#concept p {
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* メニュー */
+#menu table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    font-size: 16px;
+}
+
+#menu th, #menu td {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+#menu th {
+    background-color: #f5f5f5;
+}
+
+#menu p {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+/* ギャラリー */
+.gallery-slider {
+    width: 100%;
+}
+
+.gallery-slider img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* スタッフ */
+.staff-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.staff-member {
+    width: 30%;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.staff-member img {
+    width: 164px;
+    height: 219px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.staff-member h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.staff-member p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+/* スタッフの説明文 */
+.staff-description {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+/* インスタグラムリンクボタンのスタイル */
+.insta-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #E1306C;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.insta-button i {
+    margin-right: 8px;
+}
+
+.insta-button:hover {
+    background-color: #c82361;
+}
+
+/* アクセス */
+.access-content p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.access-content i {
+    color: #c5a880;
+    margin-right: 10px;
+}
+
+.map {
+    margin-top: 30px;
+}
+
+.map iframe {
+    border: 0;
+    width: 100%;
+    height: 450px;
+}
+
+/* 予約 */
+#reservation {
+    text-align: center;
+}
+
+#reservation p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+#reservation .btn {
+    margin: 10px;
+    padding: 15px 30px;
+    background-color: #c5a880;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+#reservation .btn:hover {
+    background-color: #b3956a;
+}
+
+#reservation .btn i {
+    margin-right: 10px;
+}
+
+/* フッター */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.footer-logo img {
+    height: 60px;
+    width: auto;
+    margin-bottom: 20px;
+}
+
+.social-media {
+    margin-bottom: 20px;
+}
+
+.social-media a {
+    color: #fff;
+    font-size: 24px;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.social-media a:hover {
+    color: #c5a880;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+/* レスポンシブデザイン */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #fff;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        text-align: center;
+        border-top: 1px solid #ddd;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 0;
+        padding: 15px 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .staff-member {
+        width: 100%;
+    }
+
+    .gallery-item {
+        width: 100%;
+    }
+
+    header .container {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    #main-visual h1 {
+        font-size: 32px;
+    }
+
+    #main-visual p {
+        font-size: 18px;
+    }
+}
